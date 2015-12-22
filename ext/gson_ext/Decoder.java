@@ -103,7 +103,8 @@ public class Decoder extends RubyObject {
 
         Reader sourceReader;
         if (arg instanceof RubyString) {
-            sourceReader = new StringReader(arg.toString());
+            RubyString str = (RubyString) arg;
+            sourceReader = new StringReader(str.getUnicodeValue());
         } else if ((arg instanceof RubyIO) || (arg instanceof RubyStringIO)) {
             IRubyObject stream = IOJavaAddons.AnyIO.any_to_inputstream(context, arg);
             sourceReader = new InputStreamReader((InputStream)stream.toJava(InputStream.class));

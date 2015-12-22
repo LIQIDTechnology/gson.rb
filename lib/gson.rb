@@ -17,7 +17,7 @@
 
 require 'java'
 require "gson/version"
-require "gson-2.2.2.jar"
+require "gson-2.5.jar"
 require "gson_ext.jar"
 
 module Gson
